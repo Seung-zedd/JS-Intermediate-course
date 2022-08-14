@@ -1,32 +1,32 @@
 /*************************
  * call method
  *************************/
-// const mike = {
-//   name: "Mike",
-// };
+const mike = {
+  name: "Mike",
+};
 
-// const tom = {
-//   name: "Tom",
-// };
+const tom = {
+  name: "Tom",
+};
 
-// function showThisName() {
-//   console.log(this.name);
-// }
+function showThisName() {
+  console.log(this.name);
+}
 
-// showThisName();
-// showThisName.call(mike);
-// showThisName.call(tom);
+showThisName();
+showThisName.call(mike);
+showThisName.call(tom);
 
-// function update(birthyear, occupation) {
-//   this.birthyear = birthyear;
-//   this.occupation = occupation;
-// }
+function update(birthyear, occupation) {
+  this.birthyear = birthyear;
+  this.occupation = occupation;
+}
 
-// update.call(mike, 1999, "singer");
-// console.log(mike);
+update.call(mike, 1999, "singer");
+console.log(mike);
 
-// update.call(tom, 1988, "developer");
-// console.log(tom);
+update.call(tom, 1988, "developer");
+console.log(tom);
 
 /**************************************
  * 위의 update함수를 apply로 바꿔본다면?
