@@ -1,3 +1,5 @@
+//obj.__proto__(underscore 2번)를 이용한 상위객체로의 상속//
+
 const cars = {
   wheels: 4,
   drive() {
@@ -21,6 +23,8 @@ x5.__proto__ = bmw;
 
 console.log(x5.color);
 
+//hasOwnProperty():객체의 property만 true값을 반환, 상위 객체로부터 상속받은 property는 false.
+
 for (let p in x5) {
   if (x5.hasOwnProperty(p)) {
     console.log("o", p);
@@ -34,12 +38,13 @@ const cars = {
   },
 };
 
+//생성자 함수(대문자)로 prototype 객체 생성 가능
 const Bmw = function (color) {
   this.color = color;
 };
 
 Bmw.prototype = {
-  constructor: Bmw,
+  constructor: Bmw,//반드시 constructor를 명시해 줄 것!!
   wheels: 4,
   drive() {
     console.log("drive..");
@@ -74,4 +79,4 @@ const Bmw = function (color) {
 
 const x5 = new Bmw("red");
 x5.color = "black";
-x5.getColor();
+x5.getColor();//위에서 {color:"black"}으로 수정을 해도 getColor는 생성자 함수의 param인 "red"를 상수 c로 고정으로 갖는다.
