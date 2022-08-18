@@ -29,11 +29,11 @@ class User2 {
 const tom = new User2("tom", 19);
 
 for (const p in mike) {
-  console.log(p);
+  console.log(p);////name,age,showName
 }
 
 for (const p in tom) {
-  console.log(p);
+  console.log(p);//name,age
 }
 
 /***************************************************
