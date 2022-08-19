@@ -7,11 +7,11 @@
  * reject:실패한 경우 함수를 실행(state:rejected, result:error)
  ********************************/
 
-// const pr = new Promise((resolve, reject) => {
-//   setTimeout(() => {
-//     reject(new Error("error.."));
-//   }, 3000);
-// }); //3s 후 state:rejected, result:"error.."
+const pr = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject(new Error("error.."));
+  }, 3000);
+}); //3s 후 state:rejected, result:"error.."
 
 const pr = new Promise((res, rej) => {
   setTimeout(() => {
@@ -22,8 +22,8 @@ const pr = new Promise((res, rej) => {
 pr.then(function (res) {
   console.log(`${res} 가지러 가자`); //"OK"가 res로 들어감
 });
-// pr.catch(function (err) {
-//   console.log(`다시 주문해주세요`);}); //catch:error가 발생(state:rejected)한 경우에만 실행
+pr.catch(function (err) {
+  console.log(`다시 주문해주세요`);}); //catch:error가 발생(state:rejected)한 경우에만 실행
 /***********************
  * 소비자의 입장에서 씀:then->catch->finally 순
  * pr.then(()=>{})으로 쓴다.
