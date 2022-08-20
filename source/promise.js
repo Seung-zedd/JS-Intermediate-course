@@ -88,7 +88,7 @@ console.log("시작");
 Promise.all([f1(), f2(), f3()]).then((res) => {
   console.log(res);
 });
-
+//Promise chaining 과정//
 f1() //Promise 중 res("1번 주문 완료")를 return
   .then((res) => f2(res)) //res:"1번 주문 완료"->f2(res->message)->"1번 주문 완료"를 출력 & Promise를 return
 
