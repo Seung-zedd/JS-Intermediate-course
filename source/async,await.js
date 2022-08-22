@@ -22,8 +22,11 @@ showName(); //1초 후에 name->"Mike"를 출력
 
 /****************************************
  * Promsie chaining ->async,await으로 변경
- * .catch -> try{await 부분} catch(e)
-    {console.log(e);}로 에러를 log로 출력
+ * try{}에서 에러가 나면 에러가 난 시점에 코드의 흐름이 catch블록으로 넘어감.
+ * catch:에러에 대한 정보를 담고 있는 객체, 
+    catch(e){
+    console.log(e)  로 사용가능
+    }
  ****************************************/
 
 const f1 = () => {
